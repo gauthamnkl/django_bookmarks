@@ -1,6 +1,6 @@
 # Create your views here.
-from django.http import Http404, HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 
@@ -11,10 +11,7 @@ def main_page(request):
 	)
 
 def user_page(request, username):
-	try:
-		user = User.objects.get(username = username)
-	except User.DoesNotExist:
-		raise Http404(u'Requested user not found.')
+	user = get_object_or_404(User, username=username)
 	bookmarks = user.bookmark_set.all()
 	return render_to_response(
 		'user_page.html',
