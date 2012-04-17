@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-		Django Bookmarks | {% block title %}{% endblock %}
+		Integral Sense Brands | {% block title %}{% endblock %}
 		</title>
 		<link rel="stylesheet" type="text/css" href="/site_media/blueprint/screen.css">
 		<link rel="stylesheet" type="text/css" href="/site_media/style.css">
@@ -10,17 +10,19 @@
 	<body>
 	<div class="container">
 		<div id="nav">
-			<a href="/">Home</a> | 
+			<a href="/">home</a> | 
 			{% if user.is_authenticated %}
-				Welcome {{ user.username }}! | 
-				<a href="/logout/">Logout</a>
+				<a href="/user/{{ user.username }}">{{ user.username }}</a> | 
+				<a href="/save/">save</a> | 
+				<a href="/logout/">logout</a>
 			{% else %}
-				<a href="/login/">Login</a> | 
-				<a href="/register/">Register</a>
+				<a href="/login/">login</a> | 
+				<a href="/register/">register</a>
 			{% endif %}
 		</div>
-		<h1>{% block head %}{% endblock %}</h1>
+		<h1>Integral Sense Brands</h1>
 		<hr>
+		<h2>{% block head %}{% endblock %}</h2>
 		{% block content %} {% endblock %}
 	</div>
 	</body>
