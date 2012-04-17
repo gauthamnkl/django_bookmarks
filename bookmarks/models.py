@@ -14,7 +14,7 @@ class Bookmark(models.Model):
 	link = models.ForeignKey(Link)
 
 	def __unicode__(self):
-		return u'%s, %s, %s' % (self.title, self.link.url, self.user.username)
+		return u'%s, %s' % (self.user.username, self.link.url)
 
 class Tag(models.Model):
 	name = models.CharField(max_length = 64, unique = True)
