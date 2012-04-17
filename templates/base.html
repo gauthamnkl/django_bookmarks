@@ -13,7 +13,8 @@
 				Welcome {{ user.username }}! | 
 				<a href="/logout/">Logout</a>
 			{% else %}
-				<a href="/login/">Login</a>
+				<a href="/login/">Login</a> | 
+				<a href="/register/">Register</a>
 			{% endif %}
 		</div>
 		<h1>{% block head %}{% endblock %}</h1>

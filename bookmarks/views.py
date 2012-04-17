@@ -31,9 +31,9 @@ def register_page(request):
       user = User.objects.create_user(
         username=form.cleaned_data['username'],
         password=form.cleaned_data['password1'],
-        email=form.cleaned_data['email']
+        email=form.cleaned_data['email'],
       )
-      return HttpResponseRedirect('/')
+      return HttpResponseRedirect('/register/success/')
   else:
     form = RegistrationForm()
   variables = RequestContext(request, { 
